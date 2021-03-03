@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks; 
 using System.Windows;
 using System.Windows.Controls;
@@ -34,12 +35,14 @@ namespace TimeKeeperClock
             Timer.Tick += new EventHandler(t_Tick);
             Timer.Interval = new TimeSpan(0, 0, 1); 
             Timer.Start();
-             
+            windowForm.Height = 65;
+            Thickness padding = lbTime.Padding;
+            padding.Top = 6;
         }
 
         private void t_Tick(object sender, EventArgs e)
         {
-            label1.Content = DateTime.Now.ToLongTimeString();
+            lbTime.Content = DateTime.Now.ToLongTimeString();
 
             if (DateTime.Now.Minute == 59 && DateTime.Now.Second == 53)
             {
@@ -65,8 +68,7 @@ namespace TimeKeeperClock
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
+        { 
             if (e.ClickCount != 2)
                 if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
@@ -79,18 +81,64 @@ namespace TimeKeeperClock
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (windowForm.Height == 65)
+                windowForm.Height = 150;
+            else
+                windowForm.Height = 65;
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            Thickness padding = lbTime.Padding;
             if (e.ClickCount == 2)
             {
                 if (TitleBar.Visibility == Visibility.Visible)
+                {
                     TitleBar.Visibility = Visibility.Collapsed;
+                    windowForm.Height = 40;
+                    padding.Top = 15;
+                }
                 else
+                {
                     TitleBar.Visibility = Visibility.Visible;
+                    windowForm.Height = 65;
+                    padding.Top = 6;
+                }
             }
         }
+         
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+
+            mediaPlayer.Open(BBCHalfHourPips);
+            mediaPlayer.Play();
+            //PlayBBCHourPips().ConfigureAwait(false);
+        }
+
+        public Task PlayBBCHourPips()
+        {
+            return Task.Run(() => Play(BBCHalfHourPips));
+        }
+
+        public void Play(Uri pipsAudio)
+        {
+            MediaPlayer mp = new MediaPlayer();
+            mp.Open(pipsAudio);
+            mp.Play();
+            //Thread.Sleep((int)waitDuration);
+        }
+
+        private void btnPlayHour_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Open(BBCHourPips);
+            mediaPlayer.Play();
+        }
+        private void btnPlayHalfHour_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Open(BBCHalfHourPips);
+            mediaPlayer.Play();
+        }
+
     }
 }

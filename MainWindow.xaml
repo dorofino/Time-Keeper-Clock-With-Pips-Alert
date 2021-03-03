@@ -5,10 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TimeKeeperClock"
         mc:Ignorable="d"
-        Title="Time Keep Clock" d:DesignHeight="70.140" d:DesignWidth="140" Width="140" Height="70"
-        WindowStyle="None" PreviewGotKeyboardFocus="Window_PreviewGotKeyboardFocus" MouseDown="Window_MouseDown" ResizeMode="NoResize" >
+        x:Name="windowForm"
+        Icon="icon.png"
+        Title="Time Keep Clock" d:DesignWidth="140" Width="140" Height="150"
+        WindowStyle="None" PreviewGotKeyboardFocus="Window_PreviewGotKeyboardFocus" 
+        MouseDown="Window_MouseDown" ResizeMode="NoResize" ShowInTaskbar="True" WindowStartupLocation="CenterScreen" >
 
-    <DockPanel x:Name="RootWindow" Margin="0,0,0,0" Background="Black">
+    <StackPanel  x:Name="RootWindow" Margin="0,0,0,0" Background="Black">
         <DockPanel x:Name="TitleBar" DockPanel.Dock="Top"  Height="26">
             <Label Foreground="White" FontSize="10">Clock Time Keep</Label>
             <Button x:Name="CloseButton" Content="&#xE8BB;" FontFamily="Segoe MDL2 Assets" 
@@ -57,9 +60,25 @@
                     </Style>
                 </Button.Style>
             </Button>
-        </DockPanel> 
-        <Grid Width="140" Background="Black" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
-            <Label Name="label1" FontSize="24" FontFamily="Calibri" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" Foreground="White"></Label>
+        </DockPanel>
+        <Grid Width="140" x:Name="grid" Background="Black" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Margin="0,0,0,0">
+            <Label x:Name="lbTime" FontSize="22" FontFamily="Calibri" HorizontalAlignment="Center" Background="{x:Null}"
+                   Foreground="White"  Margin="0,0,0,-27">00:00:00</Label> 
         </Grid>
-    </DockPanel>
+        <Button  Margin="4,30,0,0" Name="btnPlayHour" Click="btnPlayHour_Click" 
+                 HorizontalAlignment="Left" Height="20" Width="20" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <StackPanel>
+                <Image Source="play.png" />
+            </StackPanel>
+        </Button>
+        <Label Background="{x:Null}" Foreground="White" Margin="30,-20,0,0"  Height="20" Padding="0,1,0,5" Content="Hour Pips"/>
+        
+        <Button  Margin="4,00,0,0" Name="btnPlayHalfHour" Click="btnPlayHalfHour_Click" 
+                 HorizontalAlignment="Left" Height="20" Width="20" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <StackPanel>
+                <Image Source="play.png" />
+            </StackPanel>
+        </Button>        
+        <Label Background="{x:Null}" Foreground="White" Margin="30,-20,0,0"  Height="20" Padding="0,1,0,5" Content="Half Hour Pips" />
+    </StackPanel>
 </Window>
