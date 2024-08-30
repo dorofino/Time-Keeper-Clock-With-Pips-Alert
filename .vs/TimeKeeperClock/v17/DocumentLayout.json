@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\Users\\dorof\\OneDrive\\2023\\Time-Keeper-Clock-With-Pips-Alert\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BFB39A-3F92-4CFD-9C01-9DF44229B710}|TimeKeeperClock.csproj|g:\\users\\dorof\\onedrive\\2023\\time-keeper-clock-with-pips-alert\\timekeeperclock.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F7BFB39A-3F92-4CFD-9C01-9DF44229B710}|TimeKeeperClock.csproj|solutionrelative:timekeeperclock.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 57,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TimeKeeperClock",
+              "DocumentMoniker": "G:\\Users\\dorof\\OneDrive\\2023\\Time-Keeper-Clock-With-Pips-Alert\\TimeKeeperClock.csproj",
+              "RelativeDocumentMoniker": "TimeKeeperClock.csproj",
+              "ToolTip": "G:\\Users\\dorof\\OneDrive\\2023\\Time-Keeper-Clock-With-Pips-Alert\\TimeKeeperClock.csproj",
+              "RelativeToolTip": "TimeKeeperClock.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-30T17:17:57.675Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
