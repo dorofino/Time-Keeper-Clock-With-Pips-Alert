@@ -8,3 +8,5 @@ If you are tired of losing track of time, this noninvasive app will help you re
 ![{CC44A7C0-A94F-4E63-9BCC-02D626DCAD26}](https://github.com/user-attachments/assets/2fe5f141-5ff7-4fc8-ab62-3ffccbd34d23)
 
 Binary Download 
+
+[TimeKeeperClock_1_0_0_18.zip](https://github.com/dorofino/Time-Keeper-Clock-With-Pips-Alert/blob/main/Download/TimeKeeperClock_1_0_0_18.zip)
